@@ -29,7 +29,7 @@ VideoComposer is a controllable video diffusion model, which allows users to fle
 ## Generated Videos
 
 
-<video id="video" controls="" preload="none" poster="封面">
+<video id="video" controls="" preload="none">
       <source id="mp4" src="https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/412500082019.mp4?SBizCode=xiaoer" type="video/mp4">
 </videos>
 
