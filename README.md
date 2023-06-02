@@ -1,6 +1,6 @@
 # VideoComposer
 
-Official repo for [VideoComposer: Compositional Video Synthesiswith Motion Controllability]()
+Official repo for [VideoComposer: Compositional Video Synthesiswith with Motion Controllability]()
 
 Please see [Project Page](https://videocomposer.github.io/) for more examples.
 
