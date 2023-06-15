@@ -47,13 +47,15 @@ conda env create -f environment.yaml
 
 ### 2. Download model weights
 
-Download all the [model weights](https://www.modelscope.cn/models/damo/VideoComposer/summary) via following command, then place them in the following folder:
+Download all the [model weights](https://www.modelscope.cn/models/damo/VideoComposer/summary) via the following command:
 
 ```
 !pip install modelscope
 from modelscope.hub.snapshot_download import snapshot_download
 model_dir = snapshot_download('damo/VideoComposer', cache_dir='model_weights/', revision='v1.0.0')
 ```
+
+Next, place these models in the `model_weights` folder following the file structure shown below.
 
 
 ```
