@@ -1,0 +1,41 @@
+# use nvidia image tensorrt image
+FROM nvcr.io/nvidia/tensorrt:22.11-py3
+
+# install curl-config, needed for below
+RUN apt-get update && apt-get install -y curl
+RUN apt-get install -y libcurl4-openssl-dev
+
+# for wombo utils:
+ENV GIT_ACCESS_TOKEN "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"
+ENV WOMBO_UTILITIES_SCHEMAS "paint_service,luan_service,mediastore"
+RUN git config --global url."https://${GIT_ACCESS_TOKEN}@github.com".insteadOf "ssh://git@github.com"
+
+
+# install requirements
+# COPY ./requirements.txt /tmp/requirements.txt
+# COPY requirements.txt /tmp/requirements2.txt
+
+
+# RUN pip install --upgrade pip
+# RUN pip install -r /tmp/requirements.txt
+# RUN pip install -r /tmp/requirements2.txt
+
+# ADDITIONAL_PIP_INSTALL_DEPENDENCIES
+
+# update and install ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg pkg-config
+RUN apt-get install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libavfilter-dev libswscale-dev libswresample-dev libportaudio2
+
+
+# install av 
+RUN pip install av --no-binary av
+
+# copy the project
+COPY . /workspace
+
+# add the project to the python path
+ENV PYTHONPATH "${PYTHONPATH}:/workspace"
+
+# set the working directory
+WORKDIR /workspace
+
