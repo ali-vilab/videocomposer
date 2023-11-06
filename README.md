@@ -24,7 +24,7 @@ VideoComposer is a controllable video diffusion model, which allows users to fle
 - [x] Release our technical papers and webpage.
 - [x] Release code and pretrained model.
 - [x] Release Gradio UI on [ModelScope](https://modelscope.cn/studios/damo/VideoComposer-Demo/summary) and Hugging Face.
-- [x] Release pretrained model that can generate 8s videos without watermark.
+- [x] Release pretrained model that can generate 8s videos without watermark on [ModelScope](https://modelscope.cn/models/damo/VideoComposer/files)
 
 
 ## Method
