@@ -12,12 +12,19 @@ We are searching for talented, motivated, and imaginative researchers to join ou
 VideoComposer is a controllable video diffusion model, which allows users to flexibly control the spatial and temporal patterns simultaneously within a synthesized video in various forms, such as text description, sketch sequence, reference video, or even simply handcrafted motions and handrawings.
 
 
+## 🔥News!!!
+
+- __[2023.10]__ We release high-quality I2VGen-XL model, please refer to the [Webpage](https://i2vgen-xl.github.io)
+- __[2023.08]__ We release  Gradio UI on [ModelScope](https://modelscope.cn/studios/damo/VideoComposer-Demo/summary)
+- __[2023.07]__ We release the pretrained model with watermark, please refer to the [ModelCard](https://modelscope.cn/models/damo/VideoComposer/files)
+
+
+
 ## TODO
 - [x] Release our technical papers and webpage.
 - [x] Release code and pretrained model.
-- [ ] Release Gradio UI on ModelScope and Hugging Face.
-- [ ] Release pretrained model that can generate 8s videos without watermark.
-
+- [x] Release Gradio UI on [ModelScope](https://modelscope.cn/studios/damo/VideoComposer-Demo/summary) and Hugging Face.
+- [x] Release pretrained model that can generate 8s videos without watermark.
 
 
 ## Method
