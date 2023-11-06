@@ -14,8 +14,8 @@ VideoComposer is a controllable video diffusion model, which allows users to fle
 
 ## 🔥News!!!
 
-- __[2023.10]__ We release high-quality I2VGen-XL model, please refer to the [Webpage](https://i2vgen-xl.github.io)
-- __[2023.08]__ We release  Gradio UI on [ModelScope](https://modelscope.cn/studios/damo/VideoComposer-Demo/summary)
+- __[2023.10]__ We release a high-quality I2VGen-XL model, please refer to the [Webpage](https://i2vgen-xl.github.io)
+- __[2023.08]__ We release the Gradio UI on [ModelScope](https://modelscope.cn/studios/damo/VideoComposer-Demo/summary)
 - __[2023.07]__ We release the pretrained model with watermark, please refer to the [ModelCard](https://modelscope.cn/models/damo/VideoComposer/files)
 
 
