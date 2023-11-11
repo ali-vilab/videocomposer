@@ -16,7 +16,7 @@ VideoComposer is a controllable video diffusion model, which allows users to fle
 
 - __[2023.10]__ We release a high-quality I2VGen-XL model, please refer to the [Webpage](https://i2vgen-xl.github.io)
 - __[2023.08]__ We release the Gradio UI on [ModelScope](https://modelscope.cn/studios/damo/VideoComposer-Demo/summary)
-- __[2023.07]__ We release the pretrained model with watermark, please refer to the [ModelCard](https://modelscope.cn/models/damo/VideoComposer/files)
+- __[2023.07]__ We release the pretrained model without watermark, please refer to the [ModelCard](https://modelscope.cn/models/damo/VideoComposer/files)
 
 
 
@@ -47,7 +47,7 @@ Requirements:
 - xformers==0.0.13
 - motion-vector-extractor==1.0.6 (for motion vector extraction)
 
-You also can create a same environment like ours with the following command:
+You also can create the same environment as ours with the following command:
 ```
 conda env create -f environment.yaml
 ```
@@ -75,7 +75,7 @@ Next, place these models in the `model_weights` folder following the file struct
 |    |--v2-1_512-ema-pruned.ckpt
 ```
 
-You can also download the some of them from their original project: 
+You can also download some of them from their original project: 
 - "midas_v3_dpt_large.pth" in [MiDaS](https://github.com/isl-org/MiDaS)
 - "open_clip_pytorch_model.bin" in [Open Clip](https://github.com/mlfoundations/open_clip) 
 - "sketch_simplification_gan.pth" and "table5_pidinet.pth" in [Pidinet](https://github.com/zhuoinoulu/pidinet)
@@ -91,7 +91,7 @@ In this project, we provide two implementations that can help you better underst
 
 #### 3.1 Inference with Customized Inputs
 
-You can run the code with following command:
+You can run the code with the following command:
 
 ```
 python run_net.py\
@@ -170,7 +170,7 @@ python run_net.py\
 
 #### 3.2 Inference on a Video
 
-You can just runing the code with the following command:
+You can just run the code with the following command:
 ```
 python run_net.py \
     --cfg configs/exp01_vidcomposer_full.yaml \
@@ -179,7 +179,7 @@ python run_net.py \
     --seed 9999
 ```
 
-This command will extract the different conditions, e.g., depth, sketch, motion vectors, of the input video for the following video generation, which are saved in the `outputs` folder. The task list are predefined in <font style="color: rgb(128,128,255)">inference_multi.py</font>. 
+This command will extract the different conditions, e.g., depth, sketch, and motion vectors, of the input video for the following video generation, which are saved in the `outputs` folder. The task list are predefined in <font style="color: rgb(128,128,255)">inference_multi.py</font>. 
 
 
 
@@ -209,4 +209,4 @@ We would like to express our gratitude for the contributions of several previous
 
 ## Disclaimer
 
-This open-source model is trained on the [WebVid-10M](https://m-bain.github.io/webvid-dataset/) and [LAION-400M](https://laion.ai/blog/laion-400-open-dataset/) datasets and is intended for <strong>RESEARCH/NON-COMMERCIAL USE ONLY</strong>. We have also trained more powerful models using internal video data, which can be used in future.
+This open-source model is trained on the [WebVid-10M](https://m-bain.github.io/webvid-dataset/) and [LAION-400M](https://laion.ai/blog/laion-400-open-dataset/) datasets and is intended for <strong>RESEARCH/NON-COMMERCIAL USE ONLY</strong>. We have also trained more powerful models using internal video data, which can be used in the future.
