@@ -8,7 +8,12 @@ import time
 import numpy as np
 import random
 
-from flash_attn.flash_attention import FlashAttention
+try:
+    from flash_attn import flash_attn_qkvpacked_func
+    _FLASH_ATTN_V2 = True
+except ImportError:
+    from flash_attn.flash_attention import FlashAttention
+    _FLASH_ATTN_V2 = False
 
 class FlashAttentionBlock(nn.Module):
 
@@ -32,9 +37,9 @@ class FlashAttentionBlock(nn.Module):
         self.proj = nn.Conv2d(dim, dim, 1)
 
         if self.head_dim <= 128 and (self.head_dim % 8) == 0:
-            new_scale = math.pow(head_dim, -0.5)
-            self.flash_attn = FlashAttention(softmax_scale=None, attention_dropout=0.0)
-        
+            if not _FLASH_ATTN_V2:
+                self.flash_attn = FlashAttention(softmax_scale=None, attention_dropout=0.0)
+
         # zero out the last layer params
         nn.init.zeros_(self.proj.weight)
         # self.apply(self._init_weight)
@@ -70,8 +75,11 @@ class FlashAttentionBlock(nn.Module):
         qkv = torch.cat([q,k,v], dim=1)
         origin_dtype = qkv.dtype
         qkv = qkv.permute(0, 3, 1, 2).reshape(b, -1, 3, n, d).half().contiguous()
-        out, _ = self.flash_attn(qkv)
-        out.to(origin_dtype)
+        if _FLASH_ATTN_V2:
+            out = flash_attn_qkvpacked_func(qkv, dropout_p=0.0, softmax_scale=None)
+        else:
+            out, _ = self.flash_attn(qkv)
+        out = out.to(origin_dtype)
 
         if context is not None:
             out = out[:, :-4, :, :]
